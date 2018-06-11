@@ -1,4 +1,6 @@
 import dva from 'dva';
+import appModel from './models/app';
+import routes from './routes';
 import './index.css';
 
 // 1. Initialize
@@ -8,10 +10,10 @@ const app = dva();
 // app.use({});
 
 // 3. Model
-// app.model(require('./models/example').default);
+app.model(appModel);
 
 // 4. Router
-app.router(require('./router').default);
+app.router(routes);
 
 // 5. Start
 app.start('#root');
